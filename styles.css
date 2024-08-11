@@ -1,0 +1,73 @@
+body{
+    background-color: aliceblue;
+}
+
+.selections{
+    display: flex;
+    justify-content: center;
+}   
+
+.selection{
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 2rem;
+    transition: 100ms;
+}
+
+.selection:hover{
+    transform: scale(1.1);
+}
+
+.results{
+    margin: 1rem;
+    display: flex;
+    justify-content: center;
+    grid-template-columns: repeat(2,1fr);
+    justify-items: center;
+    align-items: center;
+    font-size: 8rem;
+}  
+
+.result-score{
+    margin-left: .2rem;
+    font-size: 5rem;
+    color: gray;
+}
+
+.result-selection {
+    opacity: .5;
+}
+
+.result-selection.winner{
+    opacity: 1;
+    font-size: 1.5rem;
+}
+
+.rounds {
+  margin: 1rem;
+  font-size: 5rem;
+  padding: 3px;
+  transition: all .07s ease;
+  text-align: center;
+  
+  
+}
+
+.oneRound {
+  border: .4rem solid black;
+  border-radius: .5rem;
+  margin: 1rem;
+  font-size: 1.5rem;
+  transition: all .07s ease;
+  text-align: center;
+  color: white;
+  padding: 20px;
+  background: rgba(23, 33, 172, 0.4);
+  text-shadow: 0 0 .5rem black;
+  gap: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
