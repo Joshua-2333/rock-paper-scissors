@@ -5,6 +5,7 @@ body{
 .selections{
     display: flex;
     justify-content: center;
+   
 }   
 
 .selection{
