@@ -32,27 +32,45 @@ const computerSelection = function () {
   playerPic.src = `./images/${playerSelection}.png`;
   compPic.src = `./images/${computerSelection}.png`;
 function playRound(computerSelection) {
-  const h1 = document.createElement("h1");
   const oneRound = document.createElement("div");
   oneRound.classList.add("oneRound");
+  
+  // Create player's image
+  const playerImage = document.createElement("img");
+  playerImage.src = `./images/${playerSelection.toLowerCase()}.png`;
+  playerImage.alt = `Player chose ${playerSelection}`;
+  playerImage.style.width = "50px";
+  playerImage.style.height = "50px";
+  
+  // Create computer's image
+  const computerImage = document.createElement("img");
+  computerImage.src = `./images/${computerSelection.toLowerCase()}.png`;
+  computerImage.alt = `Computer chose ${computerSelection}`;
+  computerImage.style.width = "50px";
+  computerImage.style.height = "50px";
+  
+  // Create result text
+  const resultText = document.createElement("p");
+  
   if (playerSelection == computerSelection) {
-    h1.textContent = "DRAW";
+    resultText.textContent = "DRAW";
   } else if (playerSelection == "ROCK" && computerSelection == "SCISSORS") {
-    h1.textContent = "WIN";
+    resultText.textContent = "WIN";
     playerScore += 1;
   } else if (playerSelection == "PAPER" && computerSelection == "ROCK") {
-    h1.textContent = "WIN";
+    resultText.textContent = "WIN";
     playerScore += 1;
   } else if (playerSelection == "SCISSORS" && computerSelection == "PAPER") {
-    h1.textContent = "WIN";
+    resultText.textContent = "WIN";
     playerScore += 1;
   } else {
-    h1.textContent = "LOSE";
+    resultText.textContent = "LOSE";
     computerScore += 1;
   }
-   oneRound.appendChild(playerPic);
-  oneRound.appendChild(h1);
-  oneRound.appendChild(compPic);
+  
+  oneRound.appendChild(playerImage);
+  oneRound.appendChild(resultText);
+  oneRound.appendChild(computerImage);
   roundsBox.prepend(oneRound);
   pScore.textContent = playerScore;
   cScore.textContent = computerScore;
